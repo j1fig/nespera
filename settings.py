@@ -1,3 +1,6 @@
+import os
+
+
 BASE_CONTENT_DIR = 'content'
 
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
