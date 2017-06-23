@@ -3,7 +3,9 @@ import os
 
 BASE_CONTENT_DIR = 'content'
 
-ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+ROOT_DIR = os.path.join(
+    os.path.abspath(os.path.dirname(__file__)), '..'
+)
 
 DB_SETTINGS = {
     'dev': {
