@@ -5,7 +5,7 @@ virtualenv_path: "/var/virtualenv/{{ application_name }}"
 project_path: "/var/www/{{ project_name }}"
 application_log_dir: "/tmp/logs"
 application_log_file: "{{ application_log_dir }}/gunicorn_supervisor.log"
-requirements_file: "{{ project_path }}/src/requirements.txt"
+requirements_file: "{{ project_path }}/requirements.txt"
 
 
 # Gunicorn settings
