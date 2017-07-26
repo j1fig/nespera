@@ -1,4 +1,7 @@
 ---
 
 - name: Install packages required by the app inside virtualenv
-  pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
+  pip:
+    chdir: "{{ project_path }}"
+    virtualenv: "{{ virtualenv_path }}"
+    requirements: "{{ requirements_file }}"

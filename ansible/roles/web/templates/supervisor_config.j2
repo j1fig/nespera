@@ -1,20 +1,17 @@
-[program:gunicorn]
+[program:{{ application_name }}_gunicorn]
 command = {{ virtualenv_path }}/bin/gunicorn_start
 user = {{ app_user }}
 stdout_logfile = {{ application_log_file }}
 redirect_stderr = true
 
-[program:crawl]
+[program:{{ application_name }}_crawl]
 command = {{ virtualenv_path }}/bin/python {{ project_path }}/src/nespera/crawl.py
 user = {{ app_user }}
 stdout_logfile = {{ application_log_file }}
 redirect_stderr = true
 
-[program:parse]
+[program:{{ application_name }}_parse]
 command = {{ virtualenv_path }}/bin/python {{ project_path }}/src/nespera/parse.py
 user = {{ app_user }}
 stdout_logfile = {{ application_log_file }}
 redirect_stderr = true
-
-[group: {{ application_name }]
-programs: gunicorn,crawl,parse

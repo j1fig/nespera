@@ -6,7 +6,10 @@
             backup=yes
 
 - name: Re-read the Supervisor config files
-  supervisorctl: name={{ application_name }} state=present
+  command: supervisorctl reload
 
-- name: Restart Supervisor
-  supervisorctl: name={{ application_name }} state=restarted
+- name: Assert configuration is present
+  supervisorctl: name={{ application_name }}_gunicorn state=present
+
+- name: Restart Gunicorn
+  supervisorctl: name={{ application_name }}_gunicorn state=started

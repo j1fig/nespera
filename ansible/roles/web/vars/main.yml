@@ -12,6 +12,8 @@ requirements_file: "{{ project_path }}/requirements.txt"
 app_user: "{{ application_name }}"
 app_group: "{{ application_name }}"
 
+# Supervisor settings
+program_group: "{{ application_name }}:"
 
 # Nginx settings
 nginx_http_port: 80
