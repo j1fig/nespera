@@ -12,4 +12,5 @@
   supervisorctl: name={{ application_name }}_gunicorn state=present
 
 - name: Restart Gunicorn
-  supervisorctl: name={{ application_name }}_gunicorn state=started
+  shell: supervisorctl stop {{ application_name }}_gunicorn
+  shell: supervisorctl start {{ application_name }}_gunicorn
