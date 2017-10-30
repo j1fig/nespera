@@ -2,7 +2,7 @@
 import os
 import unittest
 
-import settings
+from nespera import settings
 
 
 
