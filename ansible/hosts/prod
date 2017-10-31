@@ -2,7 +2,7 @@
 env=prod
 
 [webservers]
-52.30.142.143
+nespera.org
 
 [dbservers]
-52.30.142.143
+nespera.org
